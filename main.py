@@ -3,8 +3,15 @@ import os
 sourse_file = [[],[],[]] #储存需要备份的文件内容
 back_file =[[],[],[]]    #储存已备份文件夹中的内容
 copy_file =[[],[],[]]
+store_file = 'E:'
+old_content_path = store_file + "old.txt"
+new_content_path = store_file + "new.txt"
+old_content_file = open(old_content_path, 'a')
+new_content_file = open(new_content_path, 'a')
+i = 0
+
 print ('hello world')
-path = 'C:\\Users\\Link\\Desktop'
+path = 'E:\\Honor数据备份\\Pictures\\iphone'
 
 
 def readFileList(myList,path):
@@ -14,6 +21,7 @@ def readFileList(myList,path):
             myList:储存信息的三维数组
             path:需要读取的目录
     """
-    for root,dir,file in os.walk(path):
-        print(file)
+    for (root,dirs,files) in os.walk(path):
+        # old_content_file.wirte(str(files))
+        old_content_file.wirte('a')
 readFileList(sourse_file,path)
